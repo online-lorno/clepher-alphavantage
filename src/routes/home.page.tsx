@@ -11,8 +11,8 @@ import {
   GlobalQuoteFallback,
 } from '@/components/routes/home/global_quote'
 import { getGlobalQuote, getTimeSeriesDaily } from '@/lib/apis'
-import { jsonDataGlobalQuote, jsonDataTimeSeriesDaily } from '@/lib/constants'
-import { TGlobalQuote, TTimeSeriesDailyDetail } from '@/lib/types'
+// import { jsonDataGlobalQuote, jsonDataTimeSeriesDaily } from '@/lib/constants'
+// import { TGlobalQuote, TTimeSeriesDailyDetail } from '@/lib/types'
 
 const symbol = 'IBM'
 
