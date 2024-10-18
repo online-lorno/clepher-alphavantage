@@ -1,10 +1,12 @@
+"use client";
+
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { TTimeSeriesDailyDetail } from "@/lib/types";
+import { TimeSeriesDailyDetail } from "@/lib/types";
 
-export const columns: ColumnDef<TTimeSeriesDailyDetail>[] = [
+export const columns: ColumnDef<TimeSeriesDailyDetail>[] = [
   {
     accessorKey: "date",
     header: "Date",

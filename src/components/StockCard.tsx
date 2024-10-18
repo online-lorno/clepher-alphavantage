@@ -1,20 +1,22 @@
 "use client";
 
-import { ArrowDownIcon, ArrowUpIcon, Car } from "lucide-react";
+import { ArrowDownIcon, ArrowUpIcon } from "lucide-react";
 
 type StockCardProps = {
   symbol: string;
-  name: string;
   value: number;
   change: number;
+  icon: React.ElementType;
 };
 
 const StockCard: React.FC<StockCardProps> = ({
   symbol,
-  name,
   value,
   change,
+  icon: Icon,
 }) => {
+  const changePercent = change * 100;
+
   return (
     <div
       key={symbol}
@@ -23,11 +25,10 @@ const StockCard: React.FC<StockCardProps> = ({
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <div className="mr-4 rounded-full bg-gray-200 dark:bg-gray-700 p-3">
-            <Car className="h-6 w-6 text-yellow-500" />
+            <Icon className="h-6 w-6 text-yellow-500" />
           </div>
           <div>
             <h2 className="text-xl font-semibold">{symbol}</h2>
-            <p className="text-sm text-gray-600 dark:text-gray-400">{name}</p>
           </div>
         </div>
         <div className="text-right">
@@ -39,12 +40,12 @@ const StockCard: React.FC<StockCardProps> = ({
                 : "text-red-600 dark:text-red-400"
             }`}
           >
-            {change >= 0 ? (
+            {changePercent >= 0 ? (
               <ArrowUpIcon className="mr-1 h-4 w-4" />
             ) : (
               <ArrowDownIcon className="mr-1 h-4 w-4" />
             )}
-            {Math.abs(change)}%
+            {Math.abs(changePercent)}%
           </p>
         </div>
       </div>

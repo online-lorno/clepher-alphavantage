@@ -1,3 +1,5 @@
+"use client";
+
 import { ChangeEvent, useEffect, useState } from "react";
 import {
   ColumnDef,
@@ -135,7 +137,7 @@ export function DataTable<TData, TValue>({
           placeholder="Filter dates..."
           value={searchText}
           onChange={handleSearchTextChange}
-          className="max-w-sm bg-gray-700 text-gray-100"
+          className="max-w-sm dark:bg-gray-700 dark:text-gray-100"
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -186,6 +188,28 @@ export function DataTable<TData, TValue>({
           </TableHeader>
           <TableBody>{renderTableContent()}</TableBody>
         </Table>
+      </div>
+      <div className="flex items-center justify-end space-x-2 py-4">
+        <div className="space-x-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.previousPage()}
+            disabled={!table.getCanPreviousPage()}
+            className="dark:bg-gray-700 dark:text-gray-100 border-gray-600 dark:hover:bg-gray-600"
+          >
+            Previous
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.nextPage()}
+            disabled={!table.getCanNextPage()}
+            className="dark:bg-gray-700 dark:text-gray-100 border-gray-600 dark:hover:bg-gray-600"
+          >
+            Next
+          </Button>
+        </div>
       </div>
     </>
   );

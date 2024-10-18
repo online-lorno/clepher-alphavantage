@@ -4,7 +4,7 @@ export type TRouterError = {
   message?: string;
 };
 
-export type TGlobalQuote = {
+export type GlobalQuoteRaw = {
   "Global Quote": {
     "01. symbol": string;
     "02. open": string;
@@ -19,7 +19,20 @@ export type TGlobalQuote = {
   };
 };
 
-export type TTimeSeriesDaily = {
+export type GlobalQuoteDetail = {
+  symbol: string;
+  open: string;
+  high: string;
+  low: string;
+  price: string;
+  volume: string;
+  latestTradingDay: string;
+  previousClose: string;
+  change: string;
+  changePercent: string;
+};
+
+export type TimeSeriesDailyRaw = {
   "Meta Data": {
     "1. Information": string;
     "2. Symbol": string;
@@ -38,19 +51,24 @@ export type TTimeSeriesDaily = {
   };
 };
 
-export type TTimeSeriesDailyOriginal = {
-  "1. open": string;
-  "2. high": string;
-  "3. low": string;
-  "4. close": string;
-  "5. volume": string;
+export type TimeSeriesDailyMetaData = {
+  information: string;
+  symbol: string;
+  lastRefreshed: string;
+  outputSize: string;
+  timezone: string;
 };
 
-export type TTimeSeriesDailyDetail = {
+export type TimeSeriesDailyDetail = {
   date: string;
   open: string;
   high: string;
   low: string;
   close: string;
   volume: string;
+};
+
+export type TimeSeriesDaily = {
+  metaData: TimeSeriesDailyMetaData;
+  details: TimeSeriesDailyDetail[];
 };
