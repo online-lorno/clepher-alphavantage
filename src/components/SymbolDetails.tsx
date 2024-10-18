@@ -42,7 +42,7 @@ const SymbolDetails = () => {
   }
 
   return (
-    <div className="min-h-screen p-8">
+    <div className="min-h-screen">
       <h1 className="text-3xl font-bold mb-8 text-yellow-400">
         Stock Data: {id}
       </h1>

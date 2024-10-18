@@ -2,7 +2,7 @@ import React from "react";
 
 const SymbolDetailsSkeleton = () => {
   return (
-    <div className="p-8">
+    <>
       <div className="bg-gray-300 dark:bg-gray-600 animate-pulse h-9 mb-8 w-1/3"></div>
       <div className="rounded-lg bg-gray-200 dark:bg-gray-700 flex flex-col p-6 shadow-lg animate-pulse mb-8">
         <div className="bg-gray-300 dark:bg-gray-600 h-6 w-1/3 mb-6"></div>
@@ -16,7 +16,7 @@ const SymbolDetailsSkeleton = () => {
         </dl>
       </div>
       <div className="rounded-lg bg-gray-200 dark:bg-gray-700 flex flex-col p-6 shadow-lg animate-pulse h-60"></div>
-    </div>
+    </>
   );
 };
 
