@@ -76,7 +76,7 @@ const SymbolDetails = () => {
           <CardTitle className="text-yellow-400">Time Series Data</CardTitle>
         </CardHeader>
         <CardContent>
-          <TimeSeriesTable data={data ? data.details : []} />
+          <TimeSeriesTable data={data ? data.details : []} loading={loading} />
         </CardContent>
       </Card>
     </div>

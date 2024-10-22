@@ -6,10 +6,11 @@ import { columns } from "./Columns";
 
 type TimeSeriesTableProps = {
   data: TimeSeriesDailyDetail[];
+  loading: boolean;
 };
 
-const TimeSeriesTable: React.FC<TimeSeriesTableProps> = ({ data }) => {
-  return <DataTable columns={columns} data={data} loading={false} />;
+const TimeSeriesTable: React.FC<TimeSeriesTableProps> = ({ data, loading }) => {
+  return <DataTable columns={columns} data={data} loading={loading} />;
 };
 
 export default TimeSeriesTable;
